@@ -9,9 +9,7 @@ interface Propiedad {
 @Component({
   selector: 'app-propiedades',
   templateUrl: './propiedades.component.html',
-  styles: [
-
-  ],
+  styles: [],
 })
 export class PropiedadesComponent {
   propiedades: Propiedad[] = [

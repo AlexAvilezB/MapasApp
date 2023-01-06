@@ -8,8 +8,8 @@ import * as mapboxgl from 'mapbox-gl';
     `
       div {
         width: 100%;
-        heigth: 150px;
-        margin: 0;
+        height: 150px;
+        margin: 0px;
       }
     `,
   ],
@@ -22,10 +22,11 @@ export class MinimapaComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const mapa = new mapboxgl.Map({
-      container: this.divMapa.nativeElement, // container ID
-      style: 'mapbox://styles/mapbox/streets-v12', // style URL
-      center: this.lngLat, // starting position [lng, lat]
-      zoom: 15 // starting zoom
+      container: this.divMapa.nativeElement,
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: this.lngLat,
+      zoom: 15,
+      interactive: false,
     });
 
     new mapboxgl.Marker().setLngLat(this.lngLat).addTo(mapa);
