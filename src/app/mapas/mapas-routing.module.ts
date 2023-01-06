@@ -4,6 +4,7 @@ import { FullScreenComponent } from './pages/full-screen/full-screen.component';
 import { ZoomRangeComponent } from './pages/zoom-range/zoom-range.component';
 import { MarcadoresComponent } from './pages/marcadores/marcadores.component';
 import { PropiedadesComponent } from './pages/propiedades/propiedades.component';
+import { MinimapaComponent } from './components/minimapa/minimapa.component';
 
 const routes: Routes = [
   {

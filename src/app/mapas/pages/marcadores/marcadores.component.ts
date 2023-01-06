@@ -72,6 +72,10 @@ export class MarcadoresComponent {
     });
 
     this.guardarMarcadoresLocalStorage();
+
+    nuevoMarcador.on('dragend', () => {
+      this.guardarMarcadoresLocalStorage();
+    });
   }
 
   irMarcador(marcador: MarcadorPersonalizado) {
@@ -80,6 +84,12 @@ export class MarcadoresComponent {
       center: [lng, lat],
       essential: true,
     });
+  }
+
+  eliminarMarcador( indice: number ) {
+    this.marcadores[indice].marker?.remove();
+    this.marcadores.splice( indice, 1);
+    this.guardarMarcadoresLocalStorage();
   }
 
   guardarMarcadoresLocalStorage() {
@@ -121,6 +131,10 @@ export class MarcadoresComponent {
         marker: newMarker,
         color: m.color
       });
+
+      newMarker.on('dragend', () => {
+        this.guardarMarcadoresLocalStorage();
+      })
     })
 
     
